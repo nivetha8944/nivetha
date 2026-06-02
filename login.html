@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Login Page</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:linear-gradient(135deg, #004080, #00aaff);
+        }
+
+        .login-container{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            width:350px;
+            text-align:center;
+        }
+
+        .logo{
+            width:100px;
+            height:100px;
+            object-fit:contain;
+            margin-bottom:15px;
+        }
+
+        h2{
+            color:#004080;
+            margin-bottom:20px;
+        }
+
+        .input-group{
+            margin-bottom:15px;
+            text-align:left;
+        }
+
+        .input-group label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        .input-group input{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        .login-btn{
+            width:100%;
+            padding:12px;
+            background:#004080;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .login-btn:hover{
+            background:#002f5f;
+        }
+
+        .footer{
+            margin-top:15px;
+            font-size:14px;
+            color:#666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- Replace with your college logo -->
+        <img src="college-logo.png" alt="College Logo" class="logo">
+
+        <h2>College Login</h2>
+
+        <form>
+            <div class="input-group">
+                <label for="username">Student ID</label>
+                <input type="text" id="username" placeholder="Enter Student ID" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="footer">
+            © 2026 Your College Name
+        </div>
+    </div>
+
+</body>
+</html>
