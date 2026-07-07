@@ -3,110 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Login Page</title>
-
+    <title>University Student Portal | Login</title>
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: Arial, sans-serif;
+        /* Base Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            background:linear-gradient(135deg, #004080, #00aaff);
+        :root {
+            --primary-color: #0d3b66; /* Deep University Blue */
+            --accent-color: #f4d35e;  /* Academic Gold */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --background: #f7f9fc;
         }
 
-        .login-container{
-            background:white;
-            padding:40px;
-            border-radius:15px;
-            box-shadow:0 5px 20px rgba(0,0,0,0.2);
-            width:350px;
-            text-align:center;
+        body {
+            background-color: var(--background);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .logo{
-            width:100px;
-            height:100px;
-            object-fit:contain;
-            margin-bottom:15px;
+        /* Layout Container */
+        .login-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-top: 5px solid var(--primary-color);
         }
 
-        h2{
-            color:#004080;
-            margin-bottom:20px;
+        /* Header / Branding Styling */
+        .login-header {
+            text-align: center;
+            padding: 40px 30px 20px 30px;
         }
 
-        .input-group{
-            margin-bottom:15px;
-            text-align:left;
+        .college-logo {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 4px 10px rgba(13, 59, 102, 0.2);
         }
 
-        .input-group label{
-            display:block;
-            margin-bottom:5px;
-            font-weight:bold;
+        .login-header h1 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
         }
 
-        .input-group input{
-            width:100%;
-            padding:10px;
-            border:1px solid #ccc;
-            border-radius:8px;
+        .login-header p {
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
 
-        .login-btn{
-            width:100%;
-            padding:12px;
-            background:#004080;
-            color:white;
-            border:none;
-            border-radius:8px;
-            cursor:pointer;
-            font-size:16px;
+        /* Form Controls */
+        .login-form {
+            padding: 10px 40px 40px 40px;
         }
 
-        .login-btn:hover{
-            background:#002f5f;
+        .input-group {
+            margin-bottom: 20px;
         }
 
-        .footer{
-            margin-top:15px;
-            font-size:14px;
-            color:#666;
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #dcdcdc;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(13, 59, 102, 0.15);
+        }
+
+        /* Options Layer */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Action Buttons */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #092642;
+        }
+
+        /* Footer Links */
+        .form-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #eeeeee;
+            padding-top: 20px;
+        }
+
+        .form-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <div class="login-container">
-        <!-- Replace with your college logo -->
-        <img src="college-logo.png" alt="College Logo" class="logo">
+        <!-- Header Section -->
+        <div class="login-header">
+            <!-- Universal placeholder logo (Shield icon styling) -->
+            <div class="college-logo">U</div>
+            <h1>Apex State University</h1>
+            <p>Welcome back! Please log in to your portal.</p>
+        </div>
 
-        <h2>College Login</h2>
-
-        <form>
+        <!-- Form Section -->
+        <form class="login-form" action="#" method="POST">
+            <!-- Username Input -->
             <div class="input-group">
-                <label for="username">Student ID</label>
-                <input type="text" id="username" placeholder="Enter Student ID" required>
+                <label for="username">Student ID / Email</label>
+                <input type="text" id="username" name="username" placeholder="e.g., STU102435" required autocomplete="username">
             </div>
 
+            <!-- Password Input -->
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter Password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
             </div>
 
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+            <!-- Options (Remember Me / Forgot Pass) -->
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
 
-        <div class="footer">
-            © 2026 Your College Name
-        </div>
+            <!-- Submit Action -->
+            <button type="submit" class="submit-btn">Sign In to Portal</button>
+
+            <!-- Help & External Links -->
+            <div class="form-footer">
+                Need an account? <a href="#">Register here</a><br><br>
+                <small>By logging in, you agree to the University ICT Policies.</small>
+            </div>
+        </form>
     </div>
 
 </body>
